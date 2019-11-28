@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -82,7 +82,6 @@
 				E7635F43FA19E0F7D2C383C9 /* Pods-CameraFilter.debug.xcconfig */,
 				3CD86C2B31A9451262F88F51 /* Pods-CameraFilter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -108,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				896C4A842390002A00ED29E7 /* Main Screen */,
-				896C4A852390003B00ED29E7 /* Second Screen */,
+				896C4A852390003B00ED29E7 /* Photos Collection */,
 				896C4A9D239002F400ED29E7 /* Extensions */,
 				896C4AA0239005EE00ED29E7 /* Custom Views */,
 				896C4A70238FFFF500ED29E7 /* AppDelegate.swift */,
@@ -131,7 +130,7 @@
 			path = "Main Screen";
 			sourceTree = "<group>";
 		};
-		896C4A852390003B00ED29E7 /* Second Screen */ = {
+		896C4A852390003B00ED29E7 /* Photos Collection */ = {
 			isa = PBXGroup;
 			children = (
 				896C4A992390022D00ED29E7 /* View Model */,
@@ -139,7 +138,7 @@
 				896C4A8F2390016F00ED29E7 /* Factory */,
 				896C4A8E2390016400ED29E7 /* Flow Controller */,
 			);
-			path = "Second Screen";
+			path = "Photos Collection";
 			sourceTree = "<group>";
 		};
 		896C4A862390004A00ED29E7 /* Flow Controller */ = {
