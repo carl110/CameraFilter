@@ -22,10 +22,11 @@
 		896C4A9C2390025200ED29E7 /* PhotosCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C4A9B2390025200ED29E7 /* PhotosCollectionViewModel.swift */; };
 		896C4A9F2390030700ED29E7 /* UIColor + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C4A9E2390030700ED29E7 /* UIColor + extensions.swift */; };
 		896C4AA22390062F00ED29E7 /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C4AA12390062F00ED29E7 /* CustomCollectionView.swift */; };
-		896C4AA42390066B00ED29E7 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C4AA32390066A00ED29E7 /* CustomCollectionViewCell.swift */; };
 		896C4AA6239008DA00ED29E7 /* UIButton + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C4AA5239008DA00ED29E7 /* UIButton + extensions.swift */; };
 		896C4AA82390093100ED29E7 /* SingletonClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C4AA72390093100ED29E7 /* SingletonClass.swift */; };
 		896C4AAA2390097E00ED29E7 /* UIView + extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C4AA92390097E00ED29E7 /* UIView + extensions.swift */; };
+		896C4AAF23913A9300ED29E7 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896C4AAD23913A9300ED29E7 /* CustomCollectionViewCell.swift */; };
+		896C4AB023913A9300ED29E7 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896C4AAE23913A9300ED29E7 /* CustomCollectionViewCell.xib */; };
 		9BA04DAE7267977BB1423F1C /* Pods_CameraFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9157621A0DB60CEE80B07D9 /* Pods_CameraFilter.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,10 +49,11 @@
 		896C4A9B2390025200ED29E7 /* PhotosCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewModel.swift; sourceTree = "<group>"; };
 		896C4A9E2390030700ED29E7 /* UIColor + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extensions.swift"; sourceTree = "<group>"; };
 		896C4AA12390062F00ED29E7 /* CustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionView.swift; sourceTree = "<group>"; };
-		896C4AA32390066A00ED29E7 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		896C4AA5239008DA00ED29E7 /* UIButton + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + extensions.swift"; sourceTree = "<group>"; };
 		896C4AA72390093100ED29E7 /* SingletonClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonClass.swift; sourceTree = "<group>"; };
 		896C4AA92390097E00ED29E7 /* UIView + extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + extensions.swift"; sourceTree = "<group>"; };
+		896C4AAD23913A9300ED29E7 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		896C4AAE23913A9300ED29E7 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 		B9157621A0DB60CEE80B07D9 /* Pods_CameraFilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CameraFilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7635F43FA19E0F7D2C383C9 /* Pods-CameraFilter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraFilter.debug.xcconfig"; path = "Target Support Files/Pods-CameraFilter/Pods-CameraFilter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -220,10 +222,19 @@
 		896C4AA0239005EE00ED29E7 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				896C4AA12390062F00ED29E7 /* CustomCollectionView.swift */,
-				896C4AA32390066A00ED29E7 /* CustomCollectionViewCell.swift */,
+				896C4AB123913A9B00ED29E7 /* CollectionView */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		896C4AB123913A9B00ED29E7 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				896C4AA12390062F00ED29E7 /* CustomCollectionView.swift */,
+				896C4AAD23913A9300ED29E7 /* CustomCollectionViewCell.swift */,
+				896C4AAE23913A9300ED29E7 /* CustomCollectionViewCell.xib */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 				896C4A7D238FFFFC00ED29E7 /* LaunchScreen.storyboard in Resources */,
 				896C4A7A238FFFFC00ED29E7 /* Assets.xcassets in Resources */,
 				896C4A922390019700ED29E7 /* PhotosCollection.storyboard in Resources */,
+				896C4AB023913A9300ED29E7 /* CustomCollectionViewCell.xib in Resources */,
 				896C4A78238FFFF500ED29E7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				896C4A94239001B300ED29E7 /* PhotosCollectionViewController.swift in Sources */,
+				896C4AAF23913A9300ED29E7 /* CustomCollectionViewCell.swift in Sources */,
 				896C4A75238FFFF500ED29E7 /* ViewController.swift in Sources */,
 				896C4A9C2390025200ED29E7 /* PhotosCollectionViewModel.swift in Sources */,
 				896C4A96239001DD00ED29E7 /* ScondScreenFactory.swift in Sources */,
@@ -351,7 +364,6 @@
 				896C4A9F2390030700ED29E7 /* UIColor + extensions.swift in Sources */,
 				896C4A71238FFFF500ED29E7 /* AppDelegate.swift in Sources */,
 				896C4AA82390093100ED29E7 /* SingletonClass.swift in Sources */,
-				896C4AA42390066B00ED29E7 /* CustomCollectionViewCell.swift in Sources */,
 				896C4A8D2390009B00ED29E7 /* MainFlowController.swift in Sources */,
 				896C4A98239001F300ED29E7 /* PhotosCollectionFlowController.swift in Sources */,
 				896C4AAA2390097E00ED29E7 /* UIView + extensions.swift in Sources */,

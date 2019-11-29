@@ -8,13 +8,11 @@
 
 import Foundation
 import UIKit
+import Photos
 
 class CustomCollectionView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource{
 
-    
-    
-    var cellData: [String] = ["cell1", "cell2"]
-    var cellImage: [UIImage] = []
+    var cellImage: [PHAsset] = []
 
     
     var layout: UICollectionViewFlowLayout = {
@@ -32,7 +30,6 @@ class CustomCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
         
         self.collectionViewLayout = layout
         
-        print ("celldata count = \(cellData.count)")
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -40,38 +37,31 @@ class CustomCollectionView: UICollectionView, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cellData.count
+        return cellImage.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as! CustomCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as? CustomCollectionViewCell else {
+            fatalError ("PhotoCollectionViewCell not found")
+        }
         
-
+        let asset = self.cellImage[indexPath.row]
+        let manager = PHImageManager.default()
         
-        if indexPath.item > cellImage.count - 1 {
-            cell.backgroundView?.backgroundColor = UIColor.Greens.seaGreen
-            cell.cellLabel.text = cellData[indexPath.row]
-            cell.cellImage.image = nil
+        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: nil) { (image, _) in
             
-            cell.cellBackground.backgroundColor = UIColor.Yellows.standardYellow
-            cell.cellLabel.textColor = UIColor.Reds.standardRed
-            cell.cellLabel.textAlignment = .center
+            DispatchQueue.main.async {
+                cell.cellImage.image = image
+            }
+        }
         
-            return cell
-        } else {
-            
-            cell.cellLabel.text = cellData[indexPath.row]
-            cell.cellImage.image = cellImage[indexPath.row]
-        
-            cell.cellBackground.backgroundColor = UIColor.Shades.standardBlack
-            cell.cellLabel.textColor = UIColor.Shades.standardWhite
-            cell.cellLabel.textAlignment = .left
 
         return cell
         }
-        
+
         
     }
-}
+

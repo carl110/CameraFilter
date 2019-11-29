@@ -16,6 +16,9 @@ class PhotosCollectionViewController: UIViewController {
     
     private var images = [PHAsset]()
     
+    @IBOutlet weak var photoCollectionView: CustomCollectionView!
+    
+    
     func assignDependancies(photosCollectionFlowController: PhotosCollectionFlowController, photosCollectionViewModel: PhotosCollectionViewModel) {
         self.photosCollectionViewModel = photosCollectionViewModel
         self.photosCollectionFlowController = photosCollectionFlowController
@@ -25,6 +28,8 @@ class PhotosCollectionViewController: UIViewController {
         super.viewDidLoad()
         
         populatePhotos()
+        
+        photoCollectionView.cellImage = images
     }
     
     func populatePhotos() {
@@ -45,6 +50,7 @@ class PhotosCollectionViewController: UIViewController {
                     }
                 })
             case .authorized:
+                
                 self.getPhoto()
                 //Access Photo library
                 print ("Photo Library authorized")
@@ -67,8 +73,11 @@ class PhotosCollectionViewController: UIViewController {
         }
         
         self.images.reverse()
-        print (self.images)
-//        self.reloadData
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.photoCollectionView?.reloadData()
+        }
+        
     }
     
     //Error box if unable to access camera or library
